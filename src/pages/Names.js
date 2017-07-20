@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import UserList from '../containers/UserList'
-import UserDetails from '../containers/UserDetails'
+import NamesList from '../containers/NamesList'
+import NameDetails from '../containers/NameDetails'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import AppBar from 'material-ui/AppBar'
 import Drawer from 'material-ui/Drawer'
@@ -25,7 +25,7 @@ export default class Names extends Component {
     return (
       <div>
         <MuiThemeProvider>
-          <AppBar onTouchTap={this.handleToggle} title="" style={styles.appBar} />
+          <AppBar onTouchTap={this.handleToggle} title="Family Histroy App" style={styles.appBar} />
         </MuiThemeProvider>
 
         <MuiThemeProvider>
@@ -37,13 +37,11 @@ export default class Names extends Component {
         </MuiThemeProvider>
         <div className="container">
           <div className="jumbotron">
-            <h1>Names Page</h1>
+            <h1>Places to Search Family History</h1>
             <div>
-              <h2>Username List:</h2>
-              <UserList />
+              <NamesList />
               <hr />
-              <h2>User details</h2>
-              <UserDetails />
+              <NameDetails />
             </div>
           </div>
         </div>

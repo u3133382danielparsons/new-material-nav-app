@@ -9,17 +9,14 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {open: false}
-    // this.store = this.props.store
   }
-
   handleToggle = () => this.setState({open: !this.state.open})
   handleClose = () => this.setState({open: false})
   render() {
     return (
-
       <div>
         <MuiThemeProvider>
-          <AppBar onTouchTap={this.handleToggle} title="" />
+          <AppBar onTouchTap={this.handleToggle} title="Family History App" />
         </MuiThemeProvider>
 
         <MuiThemeProvider>
@@ -31,9 +28,8 @@ export default class App extends Component {
         </MuiThemeProvider>
         <div className="container">
           <div className="jumbotron">
-            <h1>App</h1>
+            <h1>React Redux App</h1>
             <h2>This is the homepage!</h2>
-            
           </div>
         </div>
       </div>

@@ -1,26 +1,26 @@
 import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import { selectUser } from '../actions/index'
+import { selectName } from '../actions/index'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import {List, ListItem} from 'material-ui/List'
-import Subheader from 'material-ui/Subheader'
+//import Subheader from 'material-ui/Subheader'
 import ActionInfo from 'material-ui/svg-icons/action/info'
 import Avatar from 'material-ui/Avatar'
 
 
-class UserList extends Component {
+class NamesList extends Component {
 
   createListItems(){
-      return this.props.users.map((user) => {
+      return this.props.names.map((name) => {
         return (
 
           <ListItem
-            onClick={() => this.props.selectUser(user)}
-            key={user.id}
-            primaryText={<h3>{user.first} {user.last}</h3>}
-            secondaryText={<p>{user.id}</p>}
-            leftAvatar={<Avatar src={user.thumbnail} />}
+            onClick={() => this.props.selectName(name)}
+            key={name.id}
+            primaryText={<h3>{name.first} {name.last}</h3>}
+            secondaryText={<p>{name.description}</p>}
+            leftAvatar={<Avatar src={name.thumbnail} />}
             rightIcon={<ActionInfo />}
           />
         )
@@ -39,11 +39,11 @@ class UserList extends Component {
 
 function mapStateToProps(state){
   return {
-    users: state.users
+    names: state.names
   }
 }
 
 function matchDispatchToProps(dispatch){
-  return bindActionCreators({selectUser: selectUser}, dispatch)
+  return bindActionCreators({selectName: selectName}, dispatch)
 }
-export default connect(mapStateToProps, matchDispatchToProps)(UserList)
+export default connect(mapStateToProps, matchDispatchToProps)(NamesList)

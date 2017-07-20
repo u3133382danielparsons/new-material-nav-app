@@ -10,9 +10,9 @@ export default class Newspapers extends Component {
     super(props);
     this.state = {open: false}
   }
-
   handleToggle = () => this.setState({open: !this.state.open})
   handleClose = () => this.setState({open: false})
+
   render() {
     const styles = {
         appBar: {
@@ -26,7 +26,7 @@ export default class Newspapers extends Component {
             style={styles.appBar}
             iconClassNameRight="muidocs-icon-navigation-expand-more"
             onTouchTap={this.handleToggle}
-            title=""
+            title="Family History App"
           />
         </MuiThemeProvider>
 
