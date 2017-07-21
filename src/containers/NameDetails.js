@@ -8,7 +8,7 @@ class NameDetails extends Component {
     }
     return(
       <div>
-        <img src={this.props.name.thumbnail} alt="a name"/>
+        <img src={this.props.name.logo} alt="a logo"/>
         <h2>{this.props.name.first} {this.props.name.last}</h2>
         <p>Description: {this.props.name.description}</p>
         <p><a href={this.props.name.url}>Click Here:</a></p>
